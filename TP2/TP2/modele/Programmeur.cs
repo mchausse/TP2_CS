@@ -7,16 +7,19 @@ namespace TP2.modele{
     public class Programmeur {
         public string Courriel { get; set; }
         public string Nom { get; set; }
+        public string MotDePasse { get; set; }
         public string Equipes { get; set; }
 
         public Programmeur() { }
-        public Programmeur(string c, string n){
+        public Programmeur(string c, string n, string m){
             Courriel = c;
             Nom = n;
+            MotDePasse = m;
         }
-        public Programmeur(string c, string n, string e) {
+        public Programmeur(string c, string n, string m, string e) {
             Courriel = c;
             Nom = n;
+            MotDePasse = m;
             Equipes = e;
         }
     }

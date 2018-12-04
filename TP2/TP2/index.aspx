@@ -11,6 +11,8 @@
         <div>
             <asp:Label ID="Label1" runat="server" Text="Gestion d'équipe | Bienvenue"></asp:Label>
         </div>
+        <asp:Label ID="lblCourriel" runat="server" Text="Courriel :"></asp:Label>
+        <asp:LoginName ID="courriel" runat="server" />
     </form>
 </body>
 </html>
