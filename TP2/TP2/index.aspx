@@ -1,18 +1,13 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="TP2.index" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="index.aspx.cs" Inherits="TP2.index" MasterPageFile="~/MasterTP2.Master" %>
 
-<!DOCTYPE html>
-
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-            <asp:Label ID="Label1" runat="server" Text="Gestion d'équipe | Bienvenue"></asp:Label>
-        </div>
-        <asp:Label ID="lblCourriel" runat="server" Text="Courriel :"></asp:Label>
-        <asp:LoginName ID="courriel" runat="server" />
-    </form>
-</body>
-</html>
+<asp:Content Id="Inscription" ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
+    <asp:Label ID="LblCourriel" runat="server" Text="Courriel :"></asp:Label>
+    <asp:TextBox ID="TxtbxCourriel" runat="server"></asp:TextBox>
+    <br />
+    <asp:Label ID="LblMotDePasse" runat="server" Text="Mot de passe :"></asp:Label>
+    <asp:TextBox ID="TxtbxMotDePasse" runat="server"></asp:TextBox>
+    <br />
+    <br />
+    <asp:Button ID="BtnInscription" runat="server" Text="Inscription" />
+    <asp:Button ID="BtnConnexion" runat="server" Text="Connexion" />
+</asp:Content>
