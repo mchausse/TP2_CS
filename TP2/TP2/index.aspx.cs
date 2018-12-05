@@ -13,5 +13,10 @@ namespace TP2
         {
 
         }
+
+        protected void BtnConnexion_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Equipes.aspx");
+        }
     }
 }
