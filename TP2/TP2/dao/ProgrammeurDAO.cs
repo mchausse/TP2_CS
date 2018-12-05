@@ -15,19 +15,20 @@ namespace TP2.dao
             Connexion.ConnectionString = cnx;
         }
 
-        public Programmeur FindById(String id) {
+        public Programmeur FindByCourriel(String courriel) {
             modele.Programmeur programmeur = new Programmeur();
             
             Connexion.Open();
-            MySqlCommand cmd = new MySqlCommand(); //Ou : MySqlCommand cmd = cnx.CreateCommand();
-            cmd.CommandText = "equipes";
-            cmd.CommandType = System.Data.CommandType.TableDirect;
+            string query = "SELECT col0,col1 FROM YourTable";
+            MySqlCommand cmd = new MySqlCommand(query);
             cmd.Connection = Connexion;
+            MySqlDataReader reader = cmd.ExecuteReader();
 
             MySqlDataReader dr = cmd.ExecuteReader();
 
             if (dr.Read()){
                 programmeur.Courriel = dr.GetString("COURRIEL");
+                programmeur.MotDePasse = dr.GetString("MOTDEPASSE");
                 programmeur.Nom = dr.GetString("NOM");
                 programmeur.Equipes = dr.GetString("EQUIPES");
             }

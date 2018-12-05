@@ -11,5 +11,14 @@ namespace TP2 {
     
     
     public partial class Equipes {
+        
+        /// <summary>
+        /// LblProgrammeur control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblProgrammeur;
     }
 }

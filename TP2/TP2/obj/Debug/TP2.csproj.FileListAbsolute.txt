@@ -54,3 +54,6 @@ C:\TP2-CS\TP2\TP2_CS\TP2\TP2\obj\Debug\TP2.csproj.CoreCompileInputs.cache
 C:\TP2-CS\TP2\TP2_CS\TP2\TP2\obj\Debug\TP2.csproj.CopyComplete
 C:\TP2-CS\TP2\TP2_CS\TP2\TP2\obj\Debug\TP2.dll
 C:\TP2-CS\TP2\TP2_CS\TP2\TP2\obj\Debug\TP2.pdb
+C:\TP2-CS\TP2\TP2_CS\TP2\TP2\bin\MySql.Data.dll
+C:\TP2-CS\TP2\TP2_CS\TP2\TP2\bin\Google.Protobuf.dll
+C:\TP2-CS\TP2\TP2_CS\TP2\TP2\bin\MySql.Data.xml
