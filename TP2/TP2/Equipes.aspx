@@ -1,15 +1,5 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Equipes.aspx.cs" Inherits="TP2.Equipes" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Equipes.aspx.cs" Inherits="TP2.Equipes" MasterPageFile="~/MasterTP2.Master"%>
 
-<!DOCTYPE html>
+<asp:Content Id="Equipes" ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
 
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head runat="server">
-    <title></title>
-</head>
-<body>
-    <form id="form1" runat="server">
-        <div>
-        </div>
-    </form>
-</body>
-</html>
+</asp:Content>

@@ -9,5 +9,5 @@
     <br />
     <br />
     <asp:Button ID="BtnInscription" runat="server" Text="Inscription" />
-    <asp:Button ID="BtnConnexion" runat="server" Text="Connexion" />
+    <asp:Button ID="BtnConnexion" runat="server" Text="Connexion" OnClick="BtnConnexion_Click"/>
 </asp:Content>
