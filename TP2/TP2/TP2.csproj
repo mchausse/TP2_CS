@@ -99,6 +99,7 @@
     <Compile Include="MasterTP2.Master.designer.cs">
       <DependentUpon>MasterTP2.Master</DependentUpon>
     </Compile>
+    <Compile Include="modele\Equipe.cs" />
     <Compile Include="modele\Programmeur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForm1.aspx.cs">

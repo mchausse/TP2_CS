@@ -2,4 +2,6 @@
 
 <asp:Content Id="Equipes" ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
     <asp:Label ID="LblProgrammeur" runat="server" Text="<nom du programmeur>"></asp:Label>
+    <asp:BulletedList ID="ListEquipes" runat="server">
+    </asp:BulletedList>
 </asp:Content>
