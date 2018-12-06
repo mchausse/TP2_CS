@@ -7,6 +7,7 @@
     <asp:Label ID="LblMotDePasse" runat="server" Text="Mot de passe :"></asp:Label>
     <asp:TextBox ID="TxtbxMotDePasse" runat="server"></asp:TextBox>
     <br />
+    <asp:Label ID="LblErreur" runat="server" Text="erreur"></asp:Label>
     <br />
     <asp:Button ID="BtnInscription" runat="server" Text="Inscription" />
     <asp:Button ID="BtnConnexion" runat="server" Text="Connexion" OnClick="BtnConnexion_Click"/>

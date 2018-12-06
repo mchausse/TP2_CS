@@ -14,27 +14,31 @@ namespace TP2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-            //ProgrammeurDAO programmeurDAO = new ProgrammeurDAO();
-            //LblProgrammeur.Text = programmeurDAO.FindByCourriel("mchausse@crosemont.qc.ca").Nom;
-            MySqlConnection Connexion = new MySqlConnection("Server=localhost;Uid=root;Database=equipes;");
+            // Aller chercher le nom de lutilisateur
+            HttpContext context = HttpContext.Current;
+            Programmeur profil =(Programmeur)context.Session["profil"];
+            LblProgrammeur.Text = "Profil de "+profil.Nom;
 
-            Programmeur programmeur = new Programmeur();
-
-            string query = "SELECT * FROM programmeur";
-            MySqlCommand cmd = new MySqlCommand(query);
-            cmd.Connection = Connexion;
+            // Aller chercher toutes les equipes
+            MySqlConnection Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;");
+            MySqlCommand cmd = new MySqlCommand();
+            Equipe equipe = null;
+            int i = 0;
             Connexion.Open();
 
+            cmd.CommandText = "SELECT * FROM equipe ";
+            cmd.CommandType = System.Data.CommandType.Text;
+            cmd.Connection = Connexion;
+
             MySqlDataReader dr = cmd.ExecuteReader();
-            if (dr.Read())
+            while (dr.Read())
             {
-                programmeur.Courriel = dr.GetString("COURRIEL");
-                programmeur.MotDePasse = dr.GetString("MOTDEPASSE");
-                programmeur.Nom = dr.GetString("NOM");
-                programmeur.Equipes = dr.GetString("EQUIPES");
+                equipe = new Equipe();
+                equipe.Nom = dr.GetString("NOM");
+                equipe.Description = dr.GetString("DESCRIPTION");
+                ListEquipes.Items.Insert(i++,equipe.Nom+"");
             }
             Connexion.Close();
-            LblProgrammeur.Text = programmeur.Nom;
         }
     }
 }
