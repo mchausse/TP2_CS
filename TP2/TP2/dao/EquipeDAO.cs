@@ -13,14 +13,14 @@ namespace TP2.dao
         public MySqlConnection Connexion { get; set; }
 
         public EquipeDAO() { 
-            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=root;Database=equipes;"); 
+            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;"); 
         }
 
-        public EquipeDAO(String cnx)
+        public EquipeDAO(string cnx)
         {
             Connexion.ConnectionString = cnx;
         }
-        public Equipe FindByNom(String nom)
+        public Equipe FindByNom(string nom)
         {
             try{
                 // Start la connexion

@@ -14,7 +14,6 @@ namespace TP2
     {
         protected void Page_Load(object sender, EventArgs e)
         {
-
         }
 
         protected void BtnConnexion_Click(object sender, EventArgs e){
@@ -34,6 +33,11 @@ namespace TP2
                 }
             }
             // Renvoyer les informations a la page
+        }
+
+        protected void BtnInscription_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Inscription.aspx");
         }
     }
 }

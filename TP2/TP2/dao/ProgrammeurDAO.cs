@@ -14,7 +14,7 @@ namespace TP2.dao
 
         public ProgrammeurDAO()
         {
-            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=root;Database=equipes;");
+            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;");
         }
 
         public ProgrammeurDAO(String cnx)
@@ -52,6 +52,7 @@ namespace TP2.dao
                 }
             }
         }
+
         public List<Programmeur> FindByEquipe(String equipe)
         {
             try
@@ -76,6 +77,30 @@ namespace TP2.dao
                 return listeProgrammeur;
             }
             catch (Exception e) { return null; }
+            finally
+            {
+                if (Connexion.State != ConnectionState.Closed)
+                {
+                    Connexion.Close();
+                }
+            }
+        }
+
+        public bool Create(Programmeur p)
+        {
+            try
+            {
+                Connexion.Open();
+                string requete = "INSERT INTO `programmeur` (`COURRIEL`, `NOM`, `MOTDEPASSE`, `EQUIPE`) VALUES ('"+p.Courriel+"', '"+p.Nom+"', '"+p.MotDePasse+"', '"+p.Equipe+"')";
+                Console.WriteLine("Requete" + requete);
+                MySqlCommand cmd = new MySqlCommand(requete);
+                cmd.Connection = Connexion;
+                return cmd.ExecuteNonQuery()>0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erreur"+e);
+                return false; }
             finally
             {
                 if (Connexion.State != ConnectionState.Closed)

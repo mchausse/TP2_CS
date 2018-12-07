@@ -10,7 +10,34 @@
 namespace TP2 {
     
     
-    public partial class index {
+    public partial class Inscription {
+        
+        /// <summary>
+        /// LblTitre control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblTitre;
+        
+        /// <summary>
+        /// LblNom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblNom;
+        
+        /// <summary>
+        /// TxtbxNom control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtbxNom;
         
         /// <summary>
         /// LblCourriel control.
@@ -49,21 +76,12 @@ namespace TP2 {
         protected global::System.Web.UI.WebControls.TextBox TxtbxMotDePasse;
         
         /// <summary>
-        /// BtnInscription control.
+        /// BtnCreeProgrammeur control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnInscription;
-        
-        /// <summary>
-        /// BtnConnexion control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button BtnConnexion;
+        protected global::System.Web.UI.WebControls.Button BtnCreeProgrammeur;
     }
 }
