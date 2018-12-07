@@ -20,25 +20,6 @@ namespace TP2
             LblProgrammeur.Text = "Profil de "+profil.Nom;
 
             // Aller chercher toutes les equipes
-            MySqlConnection Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;");
-            MySqlCommand cmd = new MySqlCommand();
-            Equipe equipe = null;
-            int i = 0;
-            Connexion.Open();
-
-            cmd.CommandText = "SELECT * FROM equipe ";
-            cmd.CommandType = System.Data.CommandType.Text;
-            cmd.Connection = Connexion;
-
-            MySqlDataReader dr = cmd.ExecuteReader();
-            while (dr.Read())
-            {
-                equipe = new Equipe();
-                equipe.Nom = dr.GetString("NOM");
-                equipe.Description = dr.GetString("DESCRIPTION");
-                ListEquipes.Items.Insert(i++,equipe.Nom+"");
-            }
-            Connexion.Close();
         }
     }
 }
