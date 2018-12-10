@@ -50,5 +50,38 @@ namespace TP2.dao
                 }
             }
         }
+
+        public List<Equipe> FindAll()
+        {
+            List<Equipe> equipes = new List<Equipe>();
+            try
+            {
+                // Start la connexion
+                Connexion.Open();
+
+                //Requete
+                string requete = "SELECT * FROM equipe";
+                MySqlCommand cmd = new MySqlCommand(requete);
+                cmd.Connection = Connexion;
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Equipe e = new Equipe();
+                    e.Nom = dr.GetString("NOM");
+                    e.Description = dr.GetString("DESCRIPTION");
+                    equipes.Add(e);
+                }
+                return equipes;
+            }
+            catch (Exception e) { return null; }
+            finally
+            {
+                if (Connexion.State != ConnectionState.Closed)
+                {
+                    // Ferme la connexion
+                    Connexion.Close();
+                }
+            }
+        }
     }
 }

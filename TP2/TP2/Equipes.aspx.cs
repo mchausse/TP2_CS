@@ -20,6 +20,11 @@ namespace TP2
             LblProgrammeur.Text = "Profil de "+profil.Nom;
 
             // Aller chercher toutes les equipes
+            EquipeDAO equipeDAO = new EquipeDAO();
+            foreach (Equipe equipe in equipeDAO.FindAll())
+            {
+                ListEquipes.Items.Add(equipe.Nom);
+            }
         }
     }
 }
