@@ -13,14 +13,14 @@ namespace TP2.dao
         public MySqlConnection Connexion { get; set; }
 
         public EquipeDAO() { 
-            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=root;Database=equipes;"); 
+            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;"); 
         }
 
-        public EquipeDAO(String cnx)
+        public EquipeDAO(string cnx)
         {
             Connexion.ConnectionString = cnx;
         }
-        public Equipe FindByNom(String nom)
+        public Equipe FindByNom(string nom)
         {
             try{
                 // Start la connexion
@@ -39,6 +39,39 @@ namespace TP2.dao
                     return e;
                 }
                 return null;
+            }
+            catch (Exception e) { return null; }
+            finally
+            {
+                if (Connexion.State != ConnectionState.Closed)
+                {
+                    // Ferme la connexion
+                    Connexion.Close();
+                }
+            }
+        }
+
+        public List<Equipe> FindAll()
+        {
+            List<Equipe> equipes = new List<Equipe>();
+            try
+            {
+                // Start la connexion
+                Connexion.Open();
+
+                //Requete
+                string requete = "SELECT * FROM equipe";
+                MySqlCommand cmd = new MySqlCommand(requete);
+                cmd.Connection = Connexion;
+                MySqlDataReader dr = cmd.ExecuteReader();
+                while (dr.Read())
+                {
+                    Equipe e = new Equipe();
+                    e.Nom = dr.GetString("NOM");
+                    e.Description = dr.GetString("DESCRIPTION");
+                    equipes.Add(e);
+                }
+                return equipes;
             }
             catch (Exception e) { return null; }
             finally

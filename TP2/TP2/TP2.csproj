@@ -74,6 +74,7 @@
   <ItemGroup>
     <Content Include="Equipes.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="Inscription.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -93,6 +94,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription.aspx.cs">
+      <DependentUpon>Inscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inscription.aspx.designer.cs">
+      <DependentUpon>Inscription.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterTP2.Master.cs">
       <DependentUpon>MasterTP2.Master</DependentUpon>
