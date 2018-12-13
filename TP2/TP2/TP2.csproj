@@ -72,12 +72,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AjoutEquipe.aspx" />
     <Content Include="Equipes.aspx" />
     <Content Include="index.aspx" />
+    <Content Include="Inscription.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AjoutEquipe.aspx.cs">
+      <DependentUpon>AjoutEquipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AjoutEquipe.aspx.designer.cs">
+      <DependentUpon>AjoutEquipe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="dao\EquipeDAO.cs" />
     <Compile Include="dao\ProgrammeurDAO.cs" />
     <Compile Include="Equipes.aspx.cs">
@@ -93,6 +102,13 @@
     </Compile>
     <Compile Include="index.aspx.designer.cs">
       <DependentUpon>index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Inscription.aspx.cs">
+      <DependentUpon>Inscription.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Inscription.aspx.designer.cs">
+      <DependentUpon>Inscription.aspx</DependentUpon>
     </Compile>
     <Compile Include="MasterTP2.Master.cs">
       <DependentUpon>MasterTP2.Master</DependentUpon>
@@ -140,10 +156,11 @@
           <DevelopmentServerPort>50544</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>http://localhost:50544/</IISUrl>
+          <OverrideIISAppRootUrl>True</OverrideIISAppRootUrl>
+          <IISAppRootUrl>http://localhost:50544/</IISAppRootUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
+          <CustomServerUrl>http://localhost:8585/</CustomServerUrl>
           <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>

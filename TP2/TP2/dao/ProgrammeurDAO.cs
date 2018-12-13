@@ -52,6 +52,7 @@ namespace TP2.dao
                 }
             }
         }
+
         public List<Programmeur> FindByEquipe(String equipe)
         {
             try
@@ -76,6 +77,57 @@ namespace TP2.dao
                 return listeProgrammeur;
             }
             catch (Exception e) { return null; }
+            finally
+            {
+                if (Connexion.State != ConnectionState.Closed)
+                {
+                    Connexion.Close();
+                }
+            }
+        }
+
+        public bool Create(Programmeur p)
+        {
+            try
+            {
+                Connexion.Open();
+                string requete = "INSERT INTO `programmeur` (`COURRIEL`, `NOM`, `MOTDEPASSE`, `EQUIPE`) VALUES ('"+p.Courriel+"', '"+p.Nom+"', '"+p.MotDePasse+"', '"+p.Equipe+"')";
+                Console.WriteLine("Requete" + requete);
+                MySqlCommand cmd = new MySqlCommand(requete);
+                cmd.Connection = Connexion;
+                return cmd.ExecuteNonQuery()>0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erreur"+e);
+                return false; }
+            finally
+            {
+                if (Connexion.State != ConnectionState.Closed)
+                {
+                    Connexion.Close();
+                }
+            }
+        }
+
+        public bool Update(Programmeur p)
+        {
+            try
+            {
+                Connexion.Open();
+                string requete = "UPDATE `programmeur` " +
+                                 "SET `NOM`='"+p.Nom+ "',`MOTDEPASSE`='" + p.MotDePasse + "',`EQUIPE`='" + p.Equipe + "' " +
+                                 "WHERE `COURRIEL`='" + p.Courriel + "'";
+                Console.WriteLine("Requete" + requete);
+                MySqlCommand cmd = new MySqlCommand(requete);
+                cmd.Connection = Connexion;
+                return cmd.ExecuteNonQuery() > 0;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Erreur" + e);
+                return false;
+            }
             finally
             {
                 if (Connexion.State != ConnectionState.Closed)
