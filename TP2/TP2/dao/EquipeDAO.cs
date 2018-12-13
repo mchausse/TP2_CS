@@ -27,7 +27,7 @@ namespace TP2.dao
                 Connexion.Open();
 
                 //Requete
-                string requete = "SELECT * FROM programmeur WHERE NOM = '" + nom + "'";
+                string requete = "SELECT * FROM equipe WHERE NOM = '" + nom + "'";
                 MySqlCommand cmd = new MySqlCommand(requete);
                 cmd.Connection = Connexion;
                 MySqlDataReader dr = cmd.ExecuteReader();
@@ -35,7 +35,7 @@ namespace TP2.dao
                 {
                     Equipe e = new Equipe();
                     e.Nom = dr.GetString("NOM");
-                    e.Description = dr.GetString("NOM");
+                    e.Description = dr.GetString("DESCRIPTION");
                     return e;
                 }
                 return null;
@@ -92,7 +92,7 @@ namespace TP2.dao
                 Connexion.Open();
 
                 //Requete
-                string requete = "SELECT * FROM equipe where NOM LIKE '"+search+"%'";
+                string requete = "SELECT * FROM equipe where NOM LIKE '%"+search+"%'";
                 MySqlCommand cmd = new MySqlCommand(requete);
                 cmd.Connection = Connexion;
                 MySqlDataReader dr = cmd.ExecuteReader();

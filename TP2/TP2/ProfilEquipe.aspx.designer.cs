@@ -10,69 +10,51 @@
 namespace TP2 {
     
     
-    public partial class AjoutEquipe {
+    public partial class ProfilEquipe {
         
         /// <summary>
-        /// Contrôle lblNom.
+        /// Contrôle titreEquipe.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNom;
+        protected global::System.Web.UI.WebControls.Label titreEquipe;
         
         /// <summary>
-        /// Contrôle txtNom.
+        /// Contrôle description.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNom;
+        protected global::System.Web.UI.WebControls.Label description;
         
         /// <summary>
-        /// Contrôle reqValidNom.
+        /// Contrôle ListProgrammeur.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValidNom;
+        protected global::System.Web.UI.WebControls.BulletedList ListProgrammeur;
         
         /// <summary>
-        /// Contrôle lblDescription.
+        /// Contrôle bn_quitter.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblDescription;
+        protected global::System.Web.UI.WebControls.Button bn_quitter;
         
         /// <summary>
-        /// Contrôle txtDesc.
+        /// Contrôle quitterEquipe.
         /// </summary>
         /// <remarks>
         /// Champ généré automatiquement.
         /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtDesc;
-        
-        /// <summary>
-        /// Contrôle reqValidDesc.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RequiredFieldValidator reqValidDesc;
-        
-        /// <summary>
-        /// Contrôle btnAdd.
-        /// </summary>
-        /// <remarks>
-        /// Champ généré automatiquement.
-        /// Pour modifier, déplacez la déclaration de champ du fichier de concepteur dans le fichier code-behind.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnAdd;
+        protected global::System.Web.UI.WebControls.Button quitterEquipe;
     }
 }
