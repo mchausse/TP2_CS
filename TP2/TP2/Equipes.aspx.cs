@@ -56,5 +56,20 @@ namespace TP2
                 LblErreurEquipe.Text = "Le nom de l'equipe entrer n'est pas valide!";
             }
         }
+
+        protected void btnAjout_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/AjoutEquipe.aspx");
+        }
+
+        protected void btnSearch_Click(object sender, EventArgs e)
+        {
+            EquipeDAO equipeDAO = new EquipeDAO();
+            ListEquipes.Items.Clear();
+            foreach (Equipe equipe in equipeDAO.FindAllBySearch(txtSearch.Text))
+            {
+                ListEquipes.Items.Add(equipe.Nom);
+            }
+        }
     }
 }

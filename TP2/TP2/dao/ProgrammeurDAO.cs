@@ -14,7 +14,7 @@ namespace TP2.dao
 
         public ProgrammeurDAO()
         {
-            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=;Database=equipes;");
+            Connexion = new MySqlConnection("Server=localhost;Uid=root;Pwd=root;Database=equipes;");
         }
 
         public ProgrammeurDAO(String cnx)
