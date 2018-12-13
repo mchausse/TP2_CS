@@ -76,6 +76,7 @@
     <Content Include="Equipes.aspx" />
     <Content Include="index.aspx" />
     <Content Include="Inscription.aspx" />
+    <Content Include="ProfilEquipe.aspx" />
     <Content Include="Web.config" />
     <Content Include="WebForm1.aspx" />
   </ItemGroup>
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="modele\Equipe.cs" />
     <Compile Include="modele\Programmeur.cs" />
+    <Compile Include="ProfilEquipe.aspx.cs">
+      <DependentUpon>ProfilEquipe.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProfilEquipe.aspx.designer.cs">
+      <DependentUpon>ProfilEquipe.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebForm1.aspx.cs">
       <DependentUpon>WebForm1.aspx</DependentUpon>

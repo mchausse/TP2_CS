@@ -2,7 +2,9 @@
 
 <asp:Content Id="Equipes" ContentPlaceHolderId="ContentPlaceHolder1" runat="server">
     <asp:Label ID="LblProgrammeur" runat="server" Text="<nom du programmeur>"></asp:Label><br />
-    <asp:Label ID="LblMembre" runat="server" Text=""></asp:Label><br /><br />
+    <asp:Label ID="LblMembre" runat="server" Text=""></asp:Label>
+    <asp:Button ID="Voir_equipe" runat="server" OnClick="Voir_equipe_Click" style="margin-top: 11px" Text="Voir Équipe" />
+    <br /><br />
     <asp:Label ID="Label3" runat="server" Text="Liste des équipes :"></asp:Label><br />
     <asp:Button ID="btnSearch" runat="server" Text="Rechercher" OnClick="btnSearch_Click" />
     <asp:TextBox ID="txtSearch" runat="server"></asp:TextBox>

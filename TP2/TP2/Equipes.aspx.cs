@@ -50,6 +50,7 @@ namespace TP2
                     Session["profil"] = profil;
                     // Update la base de donne avec la nouvelle equipe
                     programmeurDAO.Update(profil);
+                    Response.Redirect("~/Equipes.aspx");
                 }
             }
             if (!equipeTrouve) {
@@ -70,6 +71,11 @@ namespace TP2
             {
                 ListEquipes.Items.Add(equipe.Nom);
             }
+        }
+
+        protected void Voir_equipe_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/ProfilEquipe.aspx");
         }
     }
 }
